@@ -1,0 +1,10 @@
+- hosts: servers
+  become: yes
+
+  tasks:
+
+  - name: Pull Docker Image
+    command: docker pull yourdockerhub/devops-bluegreen-app:latest
+
+  - name: Run Deployment Script
+    command: /root/deploy.sh
